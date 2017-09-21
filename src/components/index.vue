@@ -1,27 +1,5 @@
 <template>
-  <div class="hello">
-
-    <mt-navbar v-model="selected">
-      <mt-tab-item id="1">前端资源</mt-tab-item>
-      <mt-tab-item id="2">后端资源</mt-tab-item>
-    </mt-navbar>
-
-    <!-- tab-container -->
-    <mt-tab-container v-model="selected">
-      <mt-tab-container-item id="1">
-        <mt-cell v-for="n in 10" :title="'content ' + n" />
-      </mt-tab-container-item>
-      <mt-tab-container-item id="2">
-        <mt-cell v-for="n in 4" :title="'content ' + n" />
-      </mt-tab-container-item>
-      <mt-tab-container-item id="3">
-        <mt-cell v-for="n in 6" :title="'content ' + n" />
-      </mt-tab-container-item>
-    </mt-tab-container>
-
-
-
-
+  <div class="index">
 
     <mt-tabbar v-model="selected">
       <mt-tab-item id="tab1">
@@ -41,6 +19,9 @@
         个人中心
       </mt-tab-item>
     </mt-tabbar>
+    <router-view></router-view>
+
+
 
 
   </div>
@@ -54,11 +35,10 @@
   import { Tabbar, TabItem } from 'mint-ui';
 
   export default {
-  name: 'hello',
+  name: 'index',
   data () {
     return {
-      selected: '1',
-      msg: 'Welcome to Your Vue.js App'
+      selected: 'tab1'
     }
   },
     created (){
