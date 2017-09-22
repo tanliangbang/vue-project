@@ -1,7 +1,7 @@
 <template>
   <div class="index">
 
-    <mt-tabbar v-model="selected">
+    <mt-tabbar v-model="selected" fixed>
       <mt-tab-item id="tab1">
         <img slot="icon" src="../assets/logo.png">
         学习资源
@@ -38,14 +38,13 @@
   name: 'index',
   data () {
     return {
-      selected: 'tab1'
+      selected: 'tab1 '
     }
   },
     created (){
       console.log(config)
     },
     components:{Tabbar}
-
   }
 </script>
 
